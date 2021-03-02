@@ -22,9 +22,14 @@ namespace InfoScrapping_sinhvienhufi
         public Login()
         {
             InitializeComponent();
+            Closed += Login_Closed;
         }
 
-     
+        private void Login_Closed(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         void ProcessMessageLink(string social, string link)
         {
             MessageBoxResult res = MessageBox.Show($"Bạn có muốn chuyển hướng đến {social} của tôi không?", "Thông báo", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -41,7 +46,7 @@ namespace InfoScrapping_sinhvienhufi
                 ProcessMessageLink("instagram", "");
             else ProcessMessageLink("github", "https://github.com/Uzumaki2205");
         }
-        MainWindow fr;
+        
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             CrawlHelper api = new CrawlHelper();
@@ -51,7 +56,7 @@ namespace InfoScrapping_sinhvienhufi
                 MessageBox.Show("Login thành công", "Thành công");
                 this.Visibility = Visibility.Hidden;
 
-                fr = new MainWindow();
+                MainWindow fr = new MainWindow();
                 fr.Show();
                 fr.LoadContent(txtUserName.Text);
                 fr.Closed += Fr_Closed;

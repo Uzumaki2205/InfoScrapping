@@ -1,0 +1,50 @@
+﻿<Window x:Class="InfoScrapping_sinhvienhufi.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InfoScrapping_sinhvienhufi"
+        mc:Ignorable="d"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Login" Height="320" Width="400">
+    <StackPanel Margin="20">
+        <TextBlock Style="{StaticResource MaterialDesignHeadline2TextBlock}"
+                   Text="Login" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Margin="20">
+            <materialDesign:PackIcon Kind="User" Height="40" Width="40"/>
+            <TextBox x:Name="txtUserName" Width="250" Margin="10 0"
+                     VerticalAlignment="Center"
+                     materialDesign:HintAssist.Hint="UserName"/>
+        </StackPanel>
+        <Button Margin="20 0" x:Name="btnLogin"
+            Style="{StaticResource MaterialDesignOutlinedButton}"
+            Content="Login" Click="btnLogin_Click"/>
+        <DockPanel Margin="20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+                <Button Style="{StaticResource MaterialDesignIconButton}" 
+                        Width="35" Height="35" Tag="facebook"
+                        Click="Button_Click">
+                    <materialDesign:PackIcon Kind="Facebook" Foreground="RoyalBlue"/>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignIconButton}" 
+                        Width="35" Height="35" Tag="instagram"
+                        Click="Button_Click">
+                    <materialDesign:PackIcon Kind="Instagram" Foreground="DarkOrange"/>
+                </Button>
+                <Button Style="{StaticResource MaterialDesignIconButton}" 
+                        Width="35" Height="35" Tag="github"
+                        Click="Button_Click">
+                    <materialDesign:PackIcon Kind="Github" Foreground="Black"/>
+                </Button>
+            </StackPanel>
+        </DockPanel>
+    </StackPanel>
+</Window>
